@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ripasso - Flashcard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .header {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-number.blue {
+            color: #4285f4;
+        }
+
+        .stat-number.red {
+            color: #ea4335;
+        }
+
+        .stat-number.green {
+            color: #34a853;
+        }
+
+        .stat-label {
+            color: #5f6368;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            min-height: 500px;
+        }
+
+        .card-stack {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            display: block;
+        }
+
+        .card-stack.completed {
+            display: none;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            transition: transform 0.5s ease, opacity 0.5s ease, z-index 0s 0.5s;
+            z-index: 10;
+            border: 3px solid #5f6368;
+        }
+
+        .card.difficulty-easy {
+            background: #c8e6c9;
+            border-color: #66bb6a;
+        }
+
+        .card.difficulty-medium {
+            background: #fff9c4;
+            border-color: #fdd835;
+        }
+
+        .card.difficulty-hard {
+            background: #ffcdd2;
+            border-color: #ef5350;
+        }
+
+        .card.active {
+            z-index: 20;
+        }
+
+        .card.hidden {
+            transform: translateX(-150%);
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: #e8f0fe;
+            color: #1967d2;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .status-badge.visible {
+            opacity: 1;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #1967d2;
+            border-radius: 50%;
+        }
+
+        .question {
+            font-size: 20px;
+            font-weight: 400;
+            color: #202124;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .answer {
+            display: none;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #202124;
+            border-left: 3px solid #1967d2;
+            min-height: 200px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .answer.visible {
+            display: flex;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card-footer {
+            display: none;
+        }
+
+        .rating-container {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e8eaed;
+        }
+
+        .rating-container.visible {
+            display: block;
+        }
+
+        .rating-buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .rating-btn {
+            padding: 16px 12px;
+            border: 2px solid #e8eaed;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .rating-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .rating-btn.ancora {
+            border-color: #fce4ec;
+        }
+
+        .rating-btn.ancora:hover {
+            background: #fce4ec;
+            border-color: #ea4335;
+        }
+
+        .rating-btn.difficile {
+            border-color: #fff9c4;
+        }
+
+        .rating-btn.difficile:hover {
+            background: #fff9c4;
+            border-color: #fbbc04;
+        }
+
+        .rating-btn.capito {
+            border-color: #e3f2fd;
+        }
+
+        .rating-btn.capito:hover {
+            background: #e3f2fd;
+            border-color: #4285f4;
+        }
+
+        .rating-btn.facile {
+            border-color: #e8f5e9;
+        }
+
+        .rating-btn.facile:hover {
+            background: #e8f5e9;
+            border-color: #34a853;
+        }
+
+        .icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .rating-text {
+            font-weight: 500;
+            font-size: 13px;
+            color: #202124;
+            margin-bottom: 4px;
+        }
+
+        .time-info {
+            font-size: 11px;
+            color: #5f6368;
+        }
+
+        .completion-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+
+        .completion-message.visible {
+            display: block;
+        }
+
+        .completion-message h2 {
+            color: #34a853;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .completion-message p {
+            color: #5f6368;
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .restart-btn {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .restart-btn:hover {
+            background: #3367d6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .restart-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="stat">
+            <div class="stat-number blue" id="totalCards">● 10</div>
+            <div class="stat-label">Totale</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number red" id="remainingCards">● 10</div>
+            <div class="stat-label">Da fare</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number green" id="reviewCards">● 0</div>
+            <div class="stat-label">Da ripassare</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card-stack">
+            <!-- Card 1 - Verde -->
+            <div class="card active difficulty-easy" data-new="true" onclick="flipCard(event, this)">
+                <div class="card-header">
+                    <div class="status-badge visible">
+                        <span class="status-dot"></span>
+                        Nuova
+                    </div>
+                </div>
+                <div class="question">Quale è la capitale d'Italia?</div>
+                <div class="answer">Roma</div>
+                <div class="rating-container">
+                    <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
+                            <div class="icon">🔄</div>
+                            <div class="rating-text">Ancora</div>
+                            <div class="time-info">tra &lt; 1m</div>
+                        </button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
+                            <div class="icon">😓</div>
+                            <div class="rating-text">Abbastanza difficile</div>
+                            <div class="time-info">tra &lt; 5m</div>
+                        </button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)">
+                            <div class="icon">👍</div>
+                            <div class="rating-text">Capito</div>
+                            <div class="time-info">tra &lt; 10m</div>
+                        </button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)">
+                            <div class="icon">😊</div>
+                            <div class="rating-text">Facile</div>
+                            <div class="time-info">tra &lt; 10d</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 - Verde -->
+            <div class="card difficulty-easy" onclick="flipCard(event, this)">
+                <div class="card-header">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Nuova
+                    </div>
+                </div>
+                <div class="question">Quale città è famosa per le gondole e i canali?</div>
+                <div class="answer">Venezia</div>
+                <div class="rating-container">
+                    <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
+                            <div class="icon">🔄</div>
+                            <div class="rating-text">Ancora</div>
+                            <div class="time-info">tra &lt; 1m</div>
+                        </button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
+                            <div class="icon">😓</div>
+                            <div class="rating-text">Abbastanza difficile</div>
+                            <div class="time-info">tra &lt; 5m</div>
+                        </button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)">
+                            <div class="icon">👍</div>
+                            <div class="rating-text">Capito</div>
+                            <div class="time-info">tra &lt; 10m</div>
+                        </button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)">
+                            <div class="icon">😊</div>
+                            <div class="rating-text">Facile</div>
+                            <div class="time-info">tra &lt; 10d</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 - Verde -->
+            <div class="card difficulty-easy" onclick="flipCard(event, this)">
+                <div class="card-header">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Nuova
+                    </div>
+                </div>
+                <div class="question">Qual è il monumento più celebre di Pisa?</div>
+                <div class="answer">La Torre Pendente</div>
+                <div class="rating-container">
+                    <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
+                            <div class="icon">🔄</div>
+                            <div class="rating-text">Ancora</div>
+                            <div class="time-info">tra &lt; 1m</div>
+                        </button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
+                            <div class="icon">😓</div>
+                            <div class="rating-text">Abbastanza difficile</div>
+                            <div class="time-info">tra &lt; 5m</div>
+                        </button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)">
+                            <div class="icon">👍</div>
+                            <div class="rating-text">Capito</div>
+                            <div class="time-info">tra &lt; 10m</div>
+                        </button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)">
+                            <div class="icon">😊</div>
+                            <div class="rating-text">Facile</div>
+                            <div class="time-info">tra &lt; 10d</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 - Verde -->
+            <div class="card difficulty-easy" onclick="flipCard(event, this)">
+                <div class="card-header">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Nuova
+                    </div>
+                </div>
+                <div class="question">Come si chiama il piatto nato a Napoli con pomodoro, mozzarella e basilico?</div>
+                <div class="answer">Pizza Margherita</div>
+                <div class="rating-container">
+                    <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
+                            <div class="icon">🔄</div>
+                            <div class="rating-text">Ancora</div>
+                            <div class="time-info">tra &lt; 1m</div>
+                        </button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
+                            <div class="icon">😓</div>
+                            <div class="rating-text">Abbastanza difficile</div>
+                            <div class="time-info">tra &lt; 5m</div>
+                        </button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)">
+                            <div class="icon">👍</div>
+                            <div class="rating-text">Capito</div>
+                            <div class="time-info">tra &lt; 10m</div>
+                        </button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)">
+                            <div class="icon">😊</div>
+                            <div class="rating-text">Facile</div>
+                            <div class="time-info">tra &lt; 10d</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 - Verde -->
+            <div class="card difficulty-easy" onclick="flipCard(event, this)">
+                <div class="card-header">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Nuova
+                    </div>
+                </div>
+                <div class="question">Quale città è considerata la capitale della moda italiana?</div>
+                <div class="answer">Milano</div>
+                <div class="rating-container">
+                    <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
+                            <div class="icon">🔄</div>
+                            <div class="rating-text">Ancora</div>
+                            <div class="time-info">tra &lt; 1m</div>
+                        </button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
+                            <div class="icon">😓</div>
+                            <div class="rating-text">Abbastanza difficile</div>
+                            <div class="time-info">tra &lt; 5m</div>
+                        </button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)">
+                            <div class="icon">👍</div>
+                            <div class="rating-text">Capito</div>
+                            <div class="time-info">tra &lt; 10m</div>
+                        </button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)">
+                            <div class="icon">😊</div>
+                            <div class="rating-text">Facile</div>
+                            <div class="time-info">tra &lt; 10d</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 - Gialla -->
+            <div class="card difficulty-medium" onclick="flipCard(event, this)">
+                <div class="card-header">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Nuova
+                    </div>
+                </div>
+                <div class="question">In che data si celebra la Festa della Repubblica Italiana?</div>
+                <div class="answer">2 giugno (1946)</div>
+                <div class="rating-container">
+                    <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
+                            <div class="icon">🔄</div>
+                            <div class="rating-text">Ancora</div>
+                            <div class="time-info">tra &lt; 1m</div>
+                        </button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
+                            <div class="icon">😓</div>
+                            <div class="rating-text">Abbastanza difficile</div>
+                            <div class="time-info">tra &lt; 5m</div>
+                        </button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)">
+                            <div class="icon">👍</div>
+                            <div class="rating-text">Capito</div>
+                            <div class="time-info">tra &lt; 10m</div>
+                        </button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)">
+                            <div class="icon">😊</div>
+                            <div class="rating-text">Facile</div>
+                            <div class="time-info">tra &lt; 10d</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 - Gialla -->
+            <div class="card difficulty-medium" onclick="flipCard(event, this)">
+                <div class="card-header">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Nuova
+                    </div>
+                </div>
+                <div class="question">Quale regione è famosa per le abitazioni chiamate "Trulli"?</div>
+                <div class="answer">Puglia</div>
+                <div class="rating-container">
+                    <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
+                            <div class="icon">🔄</div>
+                            <div class="rating-text">Ancora</div>
+                            <div class="time-info">tra &lt; 1m</div>
+                        </button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
+                            <div class="icon">😓</div>
+                            <div class="rating-text">Abbastanza difficile</div>
+                            <div class="time-info">tra &lt; 5m</div>
+                        </button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)">
+                            <div class="icon">👍</div>
+                            <div class="rating-text">Capito</div>
+                            <div class="time-info">tra &lt; 10m</div>
+                        </button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)">
+                            <div class="icon">😊</div>
+                            <div class="rating-text">Facile</div>
+                            <div class="time-info">tra &lt; 10d</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 - Gialla -->
+            <div class="card difficulty-medium" onclick="flipCard(event, this)">
+                <div class="card-header">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Nuova
+                    </div>
+                </div>
+                <div class="question">Chi è il Santo Patrono d'Italia (insieme a Santa Caterina)?</div>
+                <div class="answer">San Francesco d'Assisi</div>
+                <div class="rating-container">
+                    <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
+                            <div class="icon">🔄</div>
+                            <div class="rating-text">Ancora</div>
+                            <div class="time-info">tra &lt; 1m</div>
+                        </button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
+                            <div class="icon">😓</div>
+                            <div class="rating-text">Abbastanza difficile</div>
+                            <div class="time-info">tra &lt; 5m</div>
+                        </button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)">
+                            <div class="icon">👍</div>
+                            <div class="rating-text">Capito</div>
+                            <div class="time-info">tra &lt; 10m</div>
+                        </button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)">
+                            <div class="icon">😊</div>
+                            <div class="rating-text">Facile</div>
+                            <div class="time-info">tra &lt; 10d</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 9 - Gialla -->
+            <div class="card difficulty-medium" onclick="flipCard(event, this)">
+                <div class="card-header">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Nuova
+                    </div>
+                </div>
+                <div class="question">Chi fu il primo Re d'Italia?</div>
+                <div class="answer">Vittorio Emanuele II</div>
+                <div class="rating-container">
+                    <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
+                            <div class="icon">🔄</div>
+                            <div class="rating-text">Ancora</div>
+                            <div class="time-info">tra &lt; 1m</div>
+                        </button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
+                            <div class="icon">😓</div>
+                            <div class="rating-text">Abbastanza difficile</div>
+                            <div class="time-info">tra &lt; 5m</div>
+                        </button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)">
+                            <div class="icon">👍</div>
+                            <div class="rating-text">Capito</div>
+                            <div class="time-info">tra &lt; 10m</div>
+                        </button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)">
+                            <div class="icon">😊</div>
+                            <div class="rating-text">Facile</div>
+                            <div class="time-info">tra &lt; 10d</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 10 - Gialla -->
+            <div class="card difficulty-medium" onclick="flipCard(event, this)">
+                <div class="card-header">
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Nuova
+                    </div>
+                </div>
+                <div class="question">Come si chiama il ponte di Firenze famoso per le gioiellerie?</div>
+                <div class="answer">Ponte Vecchio</div>
+                <div class="rating-container">
+                    <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
+                            <div class="icon">🔄</div>
+                            <div class="rating-text">Ancora</div>
+                            <div class="time-info">tra &lt; 1m</div>
+                        </button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
+                            <div class="icon">😓</div>
+                            <div class="rating-text">Abbastanza difficile</div>
+                            <div class="time-info">tra &lt; 5m</div>
+                        </button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)">
+                            <div class="icon">👍</div>
+                            <div class="rating-text">Capito</div>
+                            <div class="time-info">tra &lt; 10m</div>
+                        </button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)">
+                            <div class="icon">😊</div>
+                            <div class="rating-text">Facile</div>
+                            <div class="time-info">tra &lt; 10d</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="completion-message" id="completionMessage">
+            <h2>🎉 Complimenti!</h2>
+            <p>Hai completato tutte le flashcard!</p>
+            <button class="restart-btn" onclick="restartCards()">Ricomincia</button>
+        </div>
+    </div>
+
+    <script>
+        let totalCards = document.querySelectorAll('.card').length;
+        let completedCards = 0;
+        let reviewCards = 0;
+        let currentCardIndex = 0;
+        let cards = document.querySelectorAll('.card');
+
+        function updateCounters() {
+            document.getElementById('totalCards').textContent = '● ' + totalCards;
+            document.getElementById('remainingCards').textContent = '● ' + (totalCards - completedCards);
+            document.getElementById('reviewCards').textContent = '● ' + reviewCards;
+        }
+
+        function flipCard(event, cardElement) {
+            if (event.target.closest('.rating-btn')) {
+                return;
+            }
+
+            const answer = cardElement.querySelector('.answer');
+            const ratingContainer = cardElement.querySelector('.rating-container');
+            
+            if (answer.classList.contains('visible')) {
+                answer.classList.remove('visible');
+                ratingContainer.classList.remove('visible');
+            } else {
+                answer.classList.add('visible');
+                ratingContainer.classList.add('visible');
+            }
+        }
+
+        function selectRating(event, button) {
+            event.stopPropagation();
+            
+            const card = button.closest('.card');
+            
+            const wasCompleted = card.dataset.completed === 'true';
+            const wasReview = card.dataset.review === 'true';
+
+            if (!wasCompleted) {
+                completedCards++;
+                card.dataset.completed = 'true';
+            }
+
+            if (wasReview) {
+                reviewCards--;
+            }
+
+            if (button.classList.contains('ancora') || button.classList.contains('difficile')) {
+                if (!wasReview) {
+                    reviewCards++;
+                    card.dataset.review = 'true';
+                }
+            } else {
+                card.dataset.review = 'false';
+            }
+
+            updateCounters();
+            nextCard();
+        }
+
+        function nextCard() {
+            const currentCard = cards[currentCardIndex];
+            currentCard.classList.add('hidden');
+            
+            currentCardIndex
