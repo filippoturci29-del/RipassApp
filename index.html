@@ -40,17 +40,9 @@
             margin-bottom: 5px;
         }
 
-        .stat-number.blue {
-            color: #4285f4;
-        }
-
-        .stat-number.red {
-            color: #ea4335;
-        }
-
-        .stat-number.green {
-            color: #34a853;
-        }
+        .stat-number.blue { color: #4285f4; }
+        .stat-number.red { color: #ea4335; }
+        .stat-number.green { color: #34a853; }
 
         .stat-label {
             color: #5f6368;
@@ -93,30 +85,12 @@
             flex-direction: column;
         }
 
-        .card.difficulty-easy {
-            background: #c8e6c9;
-            border-color: #66bb6a;
-        }
+        .card.difficulty-easy { background: #c8e6c9; border-color: #66bb6a; }
+        .card.difficulty-medium { background: #fff9c4; border-color: #fdd835; }
+        .card.difficulty-hard { background: #ffcdd2; border-color: #ef5350; }
 
-        .card.difficulty-medium {
-            background: #fff9c4;
-            border-color: #fdd835;
-        }
-
-        .card.difficulty-hard {
-            background: #ffcdd2;
-            border-color: #ef5350;
-        }
-
-        .card.active {
-            z-index: 20;
-        }
-
-        .card.hidden {
-            transform: translateX(-150%);
-            opacity: 0;
-            z-index: 1;
-        }
+        .card.active { z-index: 20; }
+        .card.hidden { transform: translateX(-150%); opacity: 0; z-index: 1; }
 
         .card-header {
             display: flex;
@@ -137,13 +111,7 @@
             justify-content: center;
         }
 
-        .home-icon:hover {
-            background: rgba(0,0,0,0.1);
-        }
-
-        .status-badge {
-            display: none;
-        }
+        .home-icon:hover { background: rgba(0,0,0,0.1); }
 
         .question {
             font-size: 18px;
@@ -182,18 +150,8 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .card-footer {
-            display: none;
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .rating-container {
@@ -203,9 +161,7 @@
             border-top: 1px solid #e8eaed;
         }
 
-        .rating-container.visible {
-            display: block;
-        }
+        .rating-container.visible { display: block; }
 
         .rating-buttons {
             display: grid;
@@ -225,61 +181,22 @@
             font-size: 11px;
         }
 
-        .rating-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+        .rating-btn:hover { transform: translateY(-2px); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
 
-        .rating-btn.ancora {
-            border-color: #fce4ec;
-        }
+        .rating-btn.ancora { border-color: #fce4ec; }
+        .rating-btn.ancora:hover { background: #fce4ec; border-color: #ea4335; }
 
-        .rating-btn.ancora:hover {
-            background: #fce4ec;
-            border-color: #ea4335;
-        }
+        .rating-btn.difficile { border-color: #fff9c4; }
+        .rating-btn.difficile:hover { background: #fff9c4; border-color: #fbbc04; }
 
-        .rating-btn.difficile {
-            border-color: #fff9c4;
-        }
+        .rating-btn.capito { border-color: #e3f2fd; }
+        .rating-btn.capito:hover { background: #e3f2fd; border-color: #4285f4; }
 
-        .rating-btn.difficile:hover {
-            background: #fff9c4;
-            border-color: #fbbc04;
-        }
+        .rating-btn.facile { border-color: #e8f5e9; }
+        .rating-btn.facile:hover { background: #e8f5e9; border-color: #34a853; }
 
-        .rating-btn.capito {
-            border-color: #e3f2fd;
-        }
-
-        .rating-btn.capito:hover {
-            background: #e3f2fd;
-            border-color: #4285f4;
-        }
-
-        .rating-btn.facile {
-            border-color: #e8f5e9;
-        }
-
-        .rating-btn.facile:hover {
-            background: #e8f5e9;
-            border-color: #34a853;
-        }
-
-        .icon {
-            font-size: 22px;
-            margin-bottom: 5px;
-        }
-
-        .rating-text {
-            font-weight: 500;
-            font-size: 12px;
-            color: #202124;
-        }
-
-        .time-info {
-            display: none;
-        }
+        .icon { font-size: 22px; margin-bottom: 5px; }
+        .rating-text { font-weight: 500; font-size: 12px; color: #202124; }
 
         .completion-message {
             display: none;
@@ -290,21 +207,9 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.12);
         }
 
-        .completion-message.visible {
-            display: block;
-        }
-
-        .completion-message h2 {
-            color: #34a853;
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-
-        .completion-message p {
-            color: #5f6368;
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
+        .completion-message.visible { display: block; }
+        .completion-message h2 { color: #34a853; font-size: 28px; margin-bottom: 15px; }
+        .completion-message p { color: #5f6368; font-size: 16px; margin-bottom: 20px; }
 
         .home-screen {
             display: none;
@@ -317,21 +222,9 @@
             margin: 0 auto;
         }
 
-        .home-screen.visible {
-            display: block;
-        }
-
-        .home-screen h1 {
-            color: #202124;
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
-
-        .home-screen p {
-            color: #5f6368;
-            font-size: 16px;
-            margin-bottom: 30px;
-        }
+        .home-screen.visible { display: block; }
+        .home-screen h1 { color: #202124; font-size: 28px; margin-bottom: 12px; }
+        .home-screen p { color: #5f6368; font-size: 16px; margin-bottom: 30px; }
 
         .order-selection {
             background: #f8f9fa;
@@ -366,16 +259,8 @@
             font-weight: 500;
         }
 
-        .order-btn:hover {
-            border-color: #4285f4;
-            color: #4285f4;
-        }
-
-        .order-btn.selected {
-            background: #4285f4;
-            color: white;
-            border-color: #4285f4;
-        }
+        .order-btn:hover { border-color: #4285f4; color: #4285f4; }
+        .order-btn.selected { background: #4285f4; color: white; border-color: #4285f4; }
 
         .deck-list {
             display: grid;
@@ -393,33 +278,12 @@
             text-align: left;
         }
 
-        .deck-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-        }
+        .deck-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.2); }
+        .deck-card h3 { font-size: 24px; margin-bottom: 10px; }
+        .deck-card p { color: rgba(255,255,255,0.9); font-size: 16px; margin-bottom: 15px; }
 
-        .deck-card h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .deck-card p {
-            color: rgba(255,255,255,0.9);
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-
-        .deck-stats {
-            display: flex;
-            gap: 20px;
-            font-size: 14px;
-        }
-
-        .deck-stats span {
-            background: rgba(255,255,255,0.2);
-            padding: 5px 12px;
-            border-radius: 20px;
-        }
+        .deck-stats { display: flex; gap: 20px; font-size: 14px; }
+        .deck-stats span { background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; }
 
         .restart-btn {
             background: #4285f4;
@@ -435,23 +299,10 @@
             margin: 0 10px;
         }
 
-        .restart-btn:hover {
-            background: #3367d6;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        }
-
-        .restart-btn:active {
-            transform: translateY(0);
-        }
-
-        .restart-btn.secondary {
-            background: #5f6368;
-        }
-
-        .restart-btn.secondary:hover {
-            background: #3c4043;
-        }
+        .restart-btn:hover { background: #3367d6; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
+        .restart-btn:active { transform: translateY(0); }
+        .restart-btn.secondary { background: #5f6368; }
+        .restart-btn.secondary:hover { background: #3c4043; }
 
         .button-container {
             display: flex;
@@ -479,9 +330,20 @@
         </div>
         
         <div class="deck-list">
-            <div class="deck-card" onclick="startDeck()">
+            <div class="deck-card" onclick="startDeck('cultura')">
                 <h3>🇮🇹 Cultura Italiana</h3>
-                <p>Domande sulla cultura Italiana</p>
+                <p>Domande sulla geografia, storia e cultura dell'Italia</p>
+                <div class="deck-stats">
+                    <span>15 card</span>
+                    <span>5 facili</span>
+                    <span>5 medie</span>
+                    <span>5 difficili</span>
+                </div>
+            </div>
+            
+            <div class="deck-card" onclick="startDeck('informatica')" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <h3>💻 Informatica</h3>
+                <p>Concetti base di programmazione, hardware e tecnologia</p>
                 <div class="deck-stats">
                     <span>15 card</span>
                     <span>5 facili</span>
@@ -508,442 +370,458 @@
     </div>
 
     <div class="container" id="studyContainer" style="display: none;">
-        <div class="card-stack">
-            <!-- Card 1 - Verde -->
+        
+        <div class="card-stack" id="culturaCards">
             <div class="card active difficulty-easy" data-new="true" onclick="flipCard(event, this)">
                 <div class="card-header">
-                    <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">
-                        🏠
-                    </div>
+                    <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">Chi è il principale esponente del Verismo italiano e autore de "I Malavoglia"?</div>
-                <div class="answer">Giovanni Verga</div>
+                <div class="question">Quale è la capitale d'Italia?</div>
+                <div class="answer">Roma</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 2 - Verde -->
+            <div class="card difficulty-easy" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">Quale città è famosa per le gondole e i canali?</div>
+                <div class="answer">Venezia</div>
+                <div class="rating-container">
+                    <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card difficulty-easy" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">Qual è il monumento più celebre di Pisa?</div>
+                <div class="answer">La Torre Pendente</div>
+                <div class="rating-container">
+                     <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+
+             <div class="card difficulty-easy" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">Come si chiama il piatto nato a Napoli con pomodoro, mozzarella e basilico?</div>
+                <div class="answer">Pizza Margherita</div>
+                <div class="rating-container">
+                     <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card difficulty-easy" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">Quale città è considerata la capitale della moda italiana?</div>
+                <div class="answer">Milano</div>
+                <div class="rating-container">
+                     <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card difficulty-medium" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">In che data si celebra la Festa della Repubblica Italiana?</div>
+                <div class="answer">2 giugno (1946)</div>
+                <div class="rating-container">
+                     <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card difficulty-medium" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">Quale regione è famosa per le abitazioni chiamate "Trulli"?</div>
+                <div class="answer">Puglia</div>
+                <div class="rating-container">
+                     <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card difficulty-medium" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">Chi è il Santo Patrono d'Italia (insieme a Santa Caterina)?</div>
+                <div class="answer">San Francesco d'Assisi</div>
+                <div class="rating-container">
+                     <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card difficulty-medium" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">Chi fu il primo Re d'Italia?</div>
+                <div class="answer">Vittorio Emanuele II</div>
+                <div class="rating-container">
+                     <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card difficulty-medium" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">Come si chiama il ponte di Firenze famoso per le gioiellerie?</div>
+                <div class="answer">Ponte Vecchio</div>
+                <div class="rating-container">
+                     <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card difficulty-hard" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">Chi è l'autore della raccolta di novelle "Il Decameron"?</div>
+                <div class="answer">Giovanni Boccaccio</div>
+                <div class="rating-container">
+                     <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card difficulty-hard" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">Chi fu l'architetto che progettò la cupola del Duomo di Firenze?</div>
+                <div class="answer">Filippo Brunelleschi</div>
+                <div class="rating-container">
+                     <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card difficulty-hard" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">In quale città si trova la tomba di Dante Alighieri?</div>
+                <div class="answer">Ravenna (morì lì in esilio, non a Firenze)</div>
+                <div class="rating-container">
+                     <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+
+             <div class="card difficulty-hard" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">Cosa significa l'acronimo DOCG sulle bottiglie di vino?</div>
+                <div class="answer">Denominazione di Origine Controllata e Garantita</div>
+                <div class="rating-container">
+                     <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card difficulty-hard" onclick="flipCard(event, this)">
+                <div class="card-header"><div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div></div>
+                <div class="question">Quale movimento artistico d'avanguardia fu fondato da Filippo Tommaso Marinetti?</div>
+                <div class="answer">Futurismo</div>
+                <div class="rating-container">
+                     <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-stack" id="informaticaCards" style="display: none;">
+            <div class="card active difficulty-easy" onclick="flipCard(event, this)">
+                <div class="card-header">
+                    <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
+                </div>
+                <div class="question">Cosa significa CPU?</div>
+                <div class="answer">Central Processing Unit (Unità Centrale di Elaborazione)</div>
+                <div class="rating-container">
+                    <div class="rating-buttons">
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
+                    </div>
+                </div>
+            </div>
+
             <div class="card difficulty-easy" onclick="flipCard(event, this)">
                 <div class="card-header">
-                    <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">
-                        🏠
-                    </div>
+                    <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">Quale autore ha teorizzato la poetica del "Fanciullino"?</div>
-                <div class="answer">Giovanni Pascoli. Secondo questa teoria, in ognuno di noi sopravvive un bambino capace di guardare il mondo con stupore e meraviglia, al di là della logica razionale.</div>
+                <div class="question">Cosa significa RAM?</div>
+                <div class="answer">Random Access Memory (Memoria ad Accesso Casuale)</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 3 - Verde -->
             <div class="card difficulty-easy" onclick="flipCard(event, this)">
                 <div class="card-header">
                     <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">In quale romanzo di Luigi Pirandello il protagonista simula la propria morte per cambiare identità, diventando Adriano Meis?</div>
-                <div class="answer">Il fu Mattia Pascal</div>
+                <div class="question">Qual è il linguaggio base per creare pagine web?</div>
+                <div class="answer">HTML (HyperText Markup Language)</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 4 - Verde -->
             <div class="card difficulty-easy" onclick="flipCard(event, this)">
                 <div class="card-header">
                     <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">Chi ha scritto il "Manifesto del Futurismo" pubblicato su Le Figaro nel 1909?</div>
-                <div class="answer">Filippo Tommaso Marinetti</div>
+                <div class="question">Cosa significa URL?</div>
+                <div class="answer">Uniform Resource Locator (indirizzo web)</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 5 - Verde -->
             <div class="card difficulty-easy" onclick="flipCard(event, this)">
                 <div class="card-header">
                     <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">Qual è il titolo della prima e più famosa raccolta poetica di Giuseppe Ungaretti, incentrata sull'esperienza della Prima Guerra Mondiale?</div>
-                <div class="answer">L'Allegria (che contiene poesie celebri come "Mattina" e "Soldati").</div>
+                <div class="question">Cosa fa un browser?</div>
+                <div class="answer">Naviga e visualizza pagine web su Internet</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 6 - Gialla -->
             <div class="card difficulty-medium" onclick="flipCard(event, this)">
                 <div class="card-header">
                     <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">Che cos'è l'"ideale dell'ostrica" nelle opere di Giovanni Verga?</div>
-                <div class="answer">È la convinzione che i poveri e gli umili, per non essere travolti dalla "fiumana del progresso", debbano rimanere attaccati al proprio scoglio (la famiglia, la casa, le tradizioni). Chi prova a staccarsi e migliorare la propria condizione finisce per perdersi.</div>
+                <div class="question">Qual è la differenza tra hardware e software?</div>
+                <div class="answer">Hardware sono i componenti fisici del computer, software sono i programmi e applicazioni</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 7 - Gialla -->
             <div class="card difficulty-medium" onclick="flipCard(event, this)">
                 <div class="card-header">
                     <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">Chi è l'"Inetto" nei romanzi di Italo Svevo e qual è la sua caratteristica principale?</div>
-                <div class="answer">L'inetto è un antieroe (come Zeno Cosini o Emilio Brentani) incapace di vivere pienamente e di adattarsi alla società borghese. È un sognatore che si perde nelle proprie analisi interiori, paralizzato dalla volontà e dal dubbio</div>
+                <div class="question">Cosa significa il termine "bug" in programmazione?</div>
+                <div class="answer">Un errore o difetto nel codice di un programma</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 8 - Gialla -->
             <div class="card difficulty-medium" onclick="flipCard(event, this)">
                 <div class="card-header">
                     <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">Cosa si intende per "Panismo" nella poetica di Gabriele D'Annunzio?</div>
-                <div class="answer">È la fusione totale tra l'io del poeta e la natura. L'uomo si trasforma in elemento naturale e la natura si antropomorfizza (esempio celebre: "La pioggia nel pineto")</div>
+                <div class="question">Cosa è un algoritmo?</div>
+                <div class="answer">Una sequenza finita di istruzioni per risolvere un problema o eseguire un compito</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 9 - Gialla -->
             <div class="card difficulty-medium" onclick="flipCard(event, this)">
                 <div class="card-header">
                     <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">Qual è il concetto fondamentale alla base della poesia di Eugenio Montale, spesso associato all'espressione "male di vivere"?</div>
-                <div class="answer">Il "Correlativo Oggettivo" (concetto ripreso da T.S. Eliot). Montale non descrive le emozioni in modo astratto, ma le rappresenta attraverso oggetti concreti e situazioni tangibili (es. "il rivo strozzato", "la foglia riarsa")</div>
+                <div class="question">Cosa significa open source?</div>
+                <div class="answer">Software con codice sorgente pubblico che può essere modificato e distribuito liberamente</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 10 - Gialla -->
             <div class="card difficulty-medium" onclick="flipCard(event, this)">
                 <div class="card-header">
                     <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">Quali sono i tre romanzi che compongono la trilogia "I nostri antenati" di Italo Calvino?</div>
-                <div class="answer">Il visconte dimezzato, Il barone rampante, Il cavaliere inesistente</div>
+                <div class="question">Cosa è il cloud computing?</div>
+                <div class="answer">Servizi di elaborazione e archiviazione dati su server remoti accessibili via Internet</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 11 - Rossa -->
             <div class="card difficulty-hard" onclick="flipCard(event, this)">
                 <div class="card-header">
                     <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">In "Il fu Mattia Pascal", che cos'è la "Lanterninosofia" esposta dal personaggio Anselmo Paleari?</div>
-                <div class="answer">È una teoria filosofica secondo cui ogni uomo ha dentro di sé un "lanternino" (il sentimento della vita) che proietta una luce limitata nel buio del mistero universale. Questo crea le nostre illusioni e le nostre verità soggettive, facendoci sentire separati dal tutto, a differenza della "luce diffusa" della realtà oggettiva</div>
+                <div class="question">Cosa è la complessità computazionale Big O?</div>
+                <div class="answer">Una notazione che descrive l'efficienza di un algoritmo in termini di tempo o spazio</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 12 - Rossa -->
             <div class="card difficulty-hard" onclick="flipCard(event, this)">
                 <div class="card-header">
                     <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">Chi è Clizia nella poesia di Montale e cosa rappresenta simbolicamente?</div>
-                <div class="answer">Clizia (pseudonimo di Irma Brandeis) è la donna-angelo ("Visiting Angel") che appare nella raccolta Le Occasioni e La bufera e altro. Rappresenta la cultura e la salvezza laica capace di opporsi alla barbarie della guerra e del fascismo, pur essendo una figura lontana e irraggiungibile.</div>
+                <div class="question">Cosa significa il principio SOLID in programmazione?</div>
+                <div class="answer">5 principi di design object-oriented: Single responsibility, Open-closed, Liskov substitution, Interface segregation, Dependency inversion</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 13 - Rossa -->
             <div class="card difficulty-hard" onclick="flipCard(event, this)">
                 <div class="card-header">
                     <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">Qual è la differenza sostanziale tra il Simbolismo di Pascoli e quello dei poeti maledetti francesi (Baudelaire, Rimbaud)?</div>
-                <div class="answer">Mentre i simbolisti francesi usano il simbolo per esplorare l'ignoto, l'assoluto e spesso la trasgressione attraverso i sensi (sinestesie spinte), il simbolismo di Pascoli è più "impressionistico" e legato al mondo contadino e domestico. Il mistero pascoliano è protettivo e infantile, non distruttivo o maledetto</div>
+                <div class="question">Cosa è una funzione ricorsiva?</div>
+                <div class="answer">Una funzione che chiama se stessa per risolvere un problema dividendolo in sottoproblemi più piccoli</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 14 - Rossa -->
             <div class="card difficulty-hard" onclick="flipCard(event, this)">
                 <div class="card-header">
                     <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">Nel romanzo "La luna e i falò" di Cesare Pavese, qual è il duplice significato simbolico dei "falò"?</div>
-                <div class="answer">I falò rappresentano sia il rito magico-contadino di fecondazione della terra (il mito, l'eterno ritorno), sia la violenza storica della guerra civile e della Resistenza (i corpi bruciati, la morte)</div>
+                <div class="question">Cosa è il paradigma di programmazione funzionale?</div>
+                <div class="answer">Stile di programmazione basato su funzioni pure, immutabilità e assenza di effetti collaterali</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
 
-            <!-- Card 15 - Rossa -->
             <div class="card difficulty-hard" onclick="flipCard(event, this)">
                 <div class="card-header">
                     <div class="home-icon" onclick="event.stopPropagation(); goToHome();" title="Torna alla Home">🏠</div>
                 </div>
-                <div class="question">Che cos'è il "pastiche" linguistico (o plurilinguismo) associato a Carlo Emilio Gadda?</div>
-                <div class="answer">È lo stile espressionistico di Gadda (visibile nel Quer pasticciaccio brutto de via Merulana), che mescola dialetti (romanesco, milanese), termini tecnici, latinismi e neologismi per rappresentare il caos e l'inestricabile disordine ("gnommero") della realtà.</div>
+                <div class="question">Cosa è il CAP theorem nei database distribuiti?</div>
+                <div class="answer">Teorema che afferma che un sistema distribuito può garantire al massimo 2 su 3: Consistency, Availability, Partition tolerance</div>
                 <div class="rating-container">
                     <div class="rating-buttons">
-                        <button class="rating-btn ancora" onclick="selectRating(event, this)">
-                            <div class="icon">🔄</div>
-                            <div class="rating-text">Ancora</div>
-                        </button>
-                        <button class="rating-btn difficile" onclick="selectRating(event, this)">
-                            <div class="icon">😓</div>
-                            <div class="rating-text">Abbastanza difficile</div>
-                        </button>
-                        <button class="rating-btn capito" onclick="selectRating(event, this)">
-                            <div class="icon">👍</div>
-                            <div class="rating-text">Capito</div>
-                        </button>
-                        <button class="rating-btn facile" onclick="selectRating(event, this)">
-                            <div class="icon">😊</div>
-                            <div class="rating-text">Facile</div>
-                        </button>
+                        <button class="rating-btn ancora" onclick="selectRating(event, this)"><div class="icon">🔄</div><div class="rating-text">Ancora</div></button>
+                        <button class="rating-btn difficile" onclick="selectRating(event, this)"><div class="icon">😓</div><div class="rating-text">Abbastanza difficile</div></button>
+                        <button class="rating-btn capito" onclick="selectRating(event, this)"><div class="icon">👍</div><div class="rating-text">Capito</div></button>
+                        <button class="rating-btn facile" onclick="selectRating(event, this)"><div class="icon">😊</div><div class="rating-text">Facile</div></button>
                     </div>
                 </div>
             </div>
@@ -965,12 +843,12 @@
         let reviewCards = 0;
         let currentCardIndex = 0;
         let cards = [];
-        let cardOrder = 'difficulty'; // 'difficulty' o 'random'
+        let cardOrder = 'difficulty';
+        let currentDeck = '';
 
         function selectOrder(order) {
             cardOrder = order;
             
-            // Aggiorna UI
             document.getElementById('orderByDifficulty').classList.remove('selected');
             document.getElementById('orderRandom').classList.remove('selected');
             
@@ -990,32 +868,44 @@
             return shuffled;
         }
 
-        function startDeck() {
+        function startDeck(deckName) {
+            currentDeck = deckName;
+            
             // Nascondi home e mostra studio
             document.getElementById('homeScreen').classList.remove('visible');
             document.getElementById('statsHeader').style.display = 'flex';
             document.getElementById('studyContainer').style.display = 'block';
             
-            // Ottieni tutte le card
-            let allCards = Array.from(document.querySelectorAll('.card'));
+            // Mostra il deck selezionato e nascondi l'altro
+            if (deckName === 'cultura') {
+                document.getElementById('culturaCards').style.display = 'block';
+                document.getElementById('informaticaCards').style.display = 'none';
+            } else {
+                document.getElementById('culturaCards').style.display = 'none';
+                document.getElementById('informaticaCards').style.display = 'block';
+            }
+            
+            // Ottieni tutte le card del deck selezionato
+            const deckElement = deckName === 'cultura' ? 
+                document.getElementById('culturaCards') : 
+                document.getElementById('informaticaCards');
+            
+            let allCards = Array.from(deckElement.querySelectorAll('.card'));
             
             // Riordina in base alla scelta
             if (cardOrder === 'random') {
                 allCards = shuffleArray(allCards);
                 
-                // Rimuovi e reinserisci le card nel DOM
-                const cardStack = document.querySelector('.card-stack');
                 allCards.forEach(card => {
-                    cardStack.removeChild(card);
+                    deckElement.removeChild(card);
                 });
                 allCards.forEach(card => {
-                    cardStack.appendChild(card);
+                    deckElement.appendChild(card);
                 });
             }
-            // Se 'difficulty', le card sono già in ordine nel DOM
             
             // Inizializza le card
-            cards = document.querySelectorAll('.card');
+            cards = deckElement.querySelectorAll('.card');
             totalCards = cards.length;
             
             initializeCards();
@@ -1028,12 +918,20 @@
             document.getElementById('statsHeader').style.display = 'none';
             document.getElementById('studyContainer').style.display = 'none';
             
+            // Nascondi entrambi i deck
+            document.getElementById('culturaCards').style.display = 'none';
+            document.getElementById('informaticaCards').style.display = 'none';
+            
             // Reset completo
             completedCards = 0;
             reviewCards = 0;
             currentCardIndex = 0;
             
-            document.querySelector('.card-stack').classList.remove('completed');
+            const allCardStacks = document.querySelectorAll('.card-stack');
+            allCardStacks.forEach(stack => {
+                stack.classList.remove('completed');
+            });
+            
             document.getElementById('completionMessage').classList.remove('visible');
             
             cards.forEach((card, index) => {
@@ -1134,7 +1032,10 @@
             if (currentCardIndex < cards.length) {
                 updateCardPositions();
             } else {
-                document.querySelector('.card-stack').classList.add('completed');
+                const activeStack = currentDeck === 'cultura' ? 
+                    document.getElementById('culturaCards') : 
+                    document.getElementById('informaticaCards');
+                activeStack.classList.add('completed');
                 document.getElementById('completionMessage').classList.add('visible');
             }
         }
@@ -1155,7 +1056,7 @@
         function restartCards() {
             // Crea array di card con le loro valutazioni
             let cardArray = Array.from(cards).map((card, index) => {
-                let priority = 4; // default: facile
+                let priority = 4;
                 
                 if (card.dataset.rating === 'ancora') priority = 1;
                 else if (card.dataset.rating === 'difficile') priority = 2;
@@ -1164,38 +1065,33 @@
                 return { element: card, priority: priority, originalIndex: index };
             });
             
-            // Ordina le card per priorità (1=ancora, 2=difficile, 3=capito, 4=facile)
             cardArray.sort((a, b) => a.priority - b.priority);
             
-            // Rimuovi tutte le card dal DOM
-            const cardStack = document.querySelector('.card-stack');
+            const cardStack = currentDeck === 'cultura' ? 
+                document.getElementById('culturaCards') : 
+                document.getElementById('informaticaCards');
+            
             cardArray.forEach(item => {
                 cardStack.removeChild(item.element);
             });
             
-            // Reinserisci le card nell'ordine corretto
             cardArray.forEach(item => {
                 cardStack.appendChild(item.element);
             });
             
-            // Aggiorna l'array cards con il nuovo ordine
-            cards = document.querySelectorAll('.card');
+            cards = cardStack.querySelectorAll('.card');
             
-            // Reset delle variabili
             completedCards = 0;
             reviewCards = 0;
             currentCardIndex = 0;
             
-            document.querySelector('.card-stack').classList.remove('completed');
+            cardStack.classList.remove('completed');
             document.getElementById('completionMessage').classList.remove('visible');
             
-            // Reset di ogni card
             cards.forEach((card, index) => {
                 card.classList.remove('hidden', 'active');
                 card.dataset.completed = 'false';
                 card.dataset.review = 'false';
-                // Mantieni la valutazione precedente per il prossimo riordino
-                // card.dataset.rating rimane
                 
                 const answer = card.querySelector('.answer');
                 const ratingContainer = card.querySelector('.rating-container');
@@ -1243,4 +1139,3 @@
     </script>
 </body>
 </html>
-
