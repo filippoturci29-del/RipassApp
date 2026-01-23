@@ -1,4 +1,5 @@
 Ripasso Flashcard App
+
 Un'applicazione web semplice, leggera e interattiva progettata per facilitare lo studio e il ripasso di argomenti tecnici tramite il metodo delle Flashcard.
 Attualmente, il mazzo di carte è configurato per il ripasso di Reti di Calcolatori e Architetture LAMP (Linux, Apache, MySQL, PHP).
 
@@ -38,4 +39,5 @@ Come Utilizzare l'App
 Non è necessaria alcuna installazione o configurazione di server.
 Scarica o clona questa repository.
 Assicurati che i file index.html, style.css e script.js siano nella stessa cartella.
+
 Fai doppio click su index.html per aprirlo nel tuo browser preferito.
